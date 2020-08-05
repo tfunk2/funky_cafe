@@ -1,0 +1,22 @@
+.navbar-nav {
+
+}
+
+.navbar-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    background-color: rgb(250, 150, 0);
+    padding: 0;
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+}
+
+.navbar-li {
+    text-align: center;
+    min-width: 30%;
+    background-color: black;
+    color: rgb(255, 206, 132);
+    cursor: pointer;
+}

@@ -8,10 +8,18 @@ export default function NavBar(props) {
     }
 
     return (
-        <div>
-            <h1 onClick={() => handleClick("meals")}>Meals</h1>
-            <h1 onClick={() => handleClick("sides")}>Sides</h1>
-            <h1 onClick={() => handleClick("ingredients")}>Ingredients</h1>
-        </div>
+        <nav className="navbar-nav">
+            <ul className="navbar-ul">
+                <li className="navbar-li" onClick={() => handleClick("meals")}>
+                    <h1 className="navbar-h1">Meals</h1>
+                </li>
+                <li className="navbar-li" onClick={() => handleClick("sides")}>
+                    <h1 className="navbar-h1">Sides</h1>
+                </li>
+                <li className="navbar-li" onClick={() => handleClick("ingredients")}>
+                    <h1 className="navbar-h1">Ingredients</h1>
+                </li>
+            </ul>
+        </nav>
     )
 }
