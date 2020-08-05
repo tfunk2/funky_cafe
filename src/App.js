@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from './containers/NavBar.js';
 
 class App extends Component {
 
@@ -14,10 +15,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchMeals()
+    this.fetchMealsAndSides()
   }
 
-  fetchMeals = () => {
+  fetchMealsAndSides = () => {
     fetch('http://localhost:3000/meals')
       .then(response => response.json())
       .then(allMeals => {
@@ -53,6 +54,7 @@ class App extends Component {
       <div className="app">
         <header className="app-header">
           <h1>Funky Cafe</h1>
+          <NavBar setActivePage={this.setActivePage}/>
         </header>
         {this.activePage()}
       </div>
