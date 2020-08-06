@@ -28,7 +28,7 @@ export default class MealBox extends Component {
     }
 
     handleClick = (mealPicked) => {
-        if(this.state.clickedStatus === true) {
+        if(this.props.pickedMeals.includes(mealPicked) === true) {
             this.props.removeMeal(mealPicked)
         } else if(this.state.clickedStatus === false && this.props.pickedMeals.includes(mealPicked) === false) {
             this.props.addMealToPickedMeals(mealPicked)
