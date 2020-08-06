@@ -1,17 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './containers/NavBar.js';
+import MealsPage from './containers/MealsPage.js';
 
 class App extends Component {
 
   state = {
     activePage: "meals",
     meals: [],
-    sides: []
+    sides: [],
+    pickedMeals: [],
+    pickedSides: [],
+    ingredients: []
   }
 
   setActivePage = (currentPage) => {
     this.setState({ activePage: currentPage })
+  }
+
+  addMealToPickedMeals = (mealSelected) => {
+    this.setState({ pickedMeals: [...this.state.pickedMeals, mealSelected] })
+  }
+
+  removeMeal = (clickedMeal) => {
+    let newPickedMeals = this.state.pickedMeals.filter(meal => meal !== clickedMeal)
+    this.setState({ pickedMeals: newPickedMeals })
+  }
+
+  addSideToPickedSides = (sideSelected) => {
+    this.setState({ pickedSides: [...this.state.pickedSides, sideSelected] })
+  }
+
+  removeSide = (clickedSide) => {
+    let newPickedSides = this.state.pickedSides.filter(side => side !== clickedSide)
+    this.setState({ pickedSides: newPickedSides })
   }
 
   componentDidMount() {
@@ -39,7 +61,7 @@ class App extends Component {
   activePage = () => {
     switch(this.state.activePage) {
       case "meals":
-        return <h1>meals</h1>
+        return <MealsPage pickedMeals={this.state.pickedMeals} removeMeal={this.removeMeal} addMealToPickedMeals={this.addMealToPickedMeals} meals={this.state.meals}/>
       case "sides":
         return <h1>sides</h1>
       case "ingredients":
