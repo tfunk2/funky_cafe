@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './containers/NavBar.js';
+import MealsPage from './containers/MealsPage.js';
 
 class App extends Component {
 
   state = {
     activePage: "meals",
     meals: [],
-    sides: []
+    sides: [],
+    pickedMeals: [],
+    pickedSides: [],
+    ingredients: []
   }
 
   setActivePage = (currentPage) => {
@@ -39,7 +43,7 @@ class App extends Component {
   activePage = () => {
     switch(this.state.activePage) {
       case "meals":
-        return <h1>meals</h1>
+        return <MealsPage meals={this.state.meals}/>
       case "sides":
         return <h1>sides</h1>
       case "ingredients":
