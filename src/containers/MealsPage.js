@@ -5,7 +5,13 @@ import MealBox from '../items/MealBox.js'
 export default function MealsPage(props) {
 
     const makeMealBoxes = props.meals.map(meal => {
-            return <MealBox pickedMeals={props.pickedMeals} removeMeal={props.removeMeal} addMealToPickedMeals={props.addMealToPickedMeals} key={meal.id} meal={meal} />
+            return <MealBox 
+                pickedMeals={props.pickedMeals} 
+                removeMeal={props.removeMeal} 
+                addMealToPickedMeals={props.addMealToPickedMeals} 
+                key={meal.id} 
+                meal={meal} 
+            />
         })
 
     return (
