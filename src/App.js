@@ -18,6 +18,24 @@ class App extends Component {
     this.setState({ activePage: currentPage })
   }
 
+  addMealToPickedMeals = (mealSelected) => {
+    this.setState({ pickedMeals: [...this.state.pickedMeals, mealSelected] })
+  }
+
+  removeMeal = (clickedMeal) => {
+    let newPickedMeals = this.state.pickedMeals.filter(meal => meal !== clickedMeal)
+    this.setState({ pickedMeals: newPickedMeals })
+  }
+
+  addSideToPickedSides = (sideSelected) => {
+    this.setState({ pickedSides: [...this.state.pickedSides, sideSelected] })
+  }
+
+  removeSide = (clickedSide) => {
+    let newPickedSides = this.state.pickedSides.filter(side => side !== clickedSide)
+    this.setState({ pickedSides: newPickedSides })
+  }
+
   componentDidMount() {
     this.fetchMealsAndSides()
   }
@@ -43,7 +61,7 @@ class App extends Component {
   activePage = () => {
     switch(this.state.activePage) {
       case "meals":
-        return <MealsPage meals={this.state.meals}/>
+        return <MealsPage pickedMeals={this.state.pickedMeals} removeMeal={this.removeMeal} addMealToPickedMeals={this.addMealToPickedMeals} meals={this.state.meals}/>
       case "sides":
         return <h1>sides</h1>
       case "ingredients":
