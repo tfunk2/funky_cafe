@@ -10,7 +10,6 @@ import FrenchFries from '../images/french-fries.jpg'
 export default class SideBox extends Component {
 
     state = {
-        clickedStatus: false
     }
 
     foundMeal = this.props.pickedMeals.find(pickedMeal => pickedMeal.id === this.props.side.meal_id)
@@ -43,10 +42,9 @@ export default class SideBox extends Component {
     handleClick = (sidePicked) => {
         if(this.props.pickedSides.includes(sidePicked) === true) {
             this.props.removeSide(sidePicked)
-        } else if(this.state.clickedStatus === false && this.props.pickedSides.includes(sidePicked) === false) {
+        } else if(this.props.pickedSides.includes(sidePicked) === false) {
             this.props.addSideToPickedSides(sidePicked)
         }
-        this.setState({ clickedStatus: !this.state.clickedStatus })
     }
 
     render() {

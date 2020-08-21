@@ -7,7 +7,6 @@ import GroundBeefTacos from '../images/ground-beef-tacos.jpg'
 export default class MealBox extends Component {
 
     state = {
-        clickedStatus: false
     }
 
     createEachIngredient = this.props.meal.ingredients.map(ingredient => {
@@ -39,10 +38,9 @@ export default class MealBox extends Component {
         if(this.props.pickedMeals.includes(mealPicked) === true) {
             this.props.removeMeal(mealPicked)
             // this.removeAppropriateSides()
-        } else if(this.state.clickedStatus === false && this.props.pickedMeals.includes(mealPicked) === false) {
+        } else if(this.props.pickedMeals.includes(mealPicked) === false) {
             this.props.addMealToPickedMeals(mealPicked)
         }
-        this.setState({ clickedStatus: !this.state.clickedStatus })
     }
 
     render() {
