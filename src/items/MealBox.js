@@ -27,9 +27,18 @@ export default class MealBox extends Component {
         }
     }
 
+    // removeAppropriateSides = () => {
+    //     this.props.pickedSides.map(side => {
+    //         if(side.meal_id === this.props.meal.id) {
+    //             this.props.removeSide(side)
+    //         }
+    //     })
+    // }
+
     handleClick = (mealPicked) => {
         if(this.props.pickedMeals.includes(mealPicked) === true) {
             this.props.removeMeal(mealPicked)
+            // this.removeAppropriateSides()
         } else if(this.state.clickedStatus === false && this.props.pickedMeals.includes(mealPicked) === false) {
             this.props.addMealToPickedMeals(mealPicked)
         }

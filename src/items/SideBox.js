@@ -37,6 +37,7 @@ export default class SideBox extends Component {
                 {this.whichImage()}
             </div>
         }
+        return null;
     })
 
     handleClick = (sidePicked) => {

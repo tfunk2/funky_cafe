@@ -11,6 +11,8 @@ export default function MealsPage(props) {
                 addMealToPickedMeals={props.addMealToPickedMeals} 
                 key={meal.id} 
                 meal={meal} 
+                pickedSides={props.pickedSides}
+                removeSide={props.removeSide}
             />
         })
 

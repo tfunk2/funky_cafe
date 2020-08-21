@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './containers/NavBar.js';
 import MealsPage from './containers/MealsPage.js';
 import SidesPage from './containers/SidesPage.js';
+import IngredientsPage from './containers/IngredientsPage.js'
 
 class App extends Component {
 
@@ -21,20 +22,26 @@ class App extends Component {
 
   addMealToPickedMeals = (mealSelected) => {
     this.setState({ pickedMeals: [...this.state.pickedMeals, mealSelected] })
+    this.setState({ ingredients: [...this.state.ingredients, mealSelected.ingredients] })
   }
 
   removeMeal = (clickedMeal) => {
     let newPickedMeals = this.state.pickedMeals.filter(meal => meal !== clickedMeal)
     this.setState({ pickedMeals: newPickedMeals })
+    let newIngredients = this.state.ingredients.filter(arrayOfIngredients => arrayOfIngredients !== clickedMeal.ingredients)
+    this.setState({ ingredients: newIngredients })
   }
 
   addSideToPickedSides = (sideSelected) => {
     this.setState({ pickedSides: [...this.state.pickedSides, sideSelected] })
+    this.setState({ ingredients: [...this.state.ingredients, sideSelected.ingredients] })
   }
 
   removeSide = (clickedSide) => {
     let newPickedSides = this.state.pickedSides.filter(side => side !== clickedSide)
     this.setState({ pickedSides: newPickedSides })
+    let newIngredientsList = this.state.ingredients.filter(arrayOfIngredients => arrayOfIngredients !== clickedSide.ingredients)
+    this.setState({ ingredients: newIngredientsList })
   }
 
   componentDidMount() {
@@ -46,16 +53,16 @@ class App extends Component {
       .then(response => response.json())
       .then(allMeals => {
         this.setState({ meals: allMeals })
-        console.log(allMeals)
-        console.log(this.state.meals)
+        // console.log(allMeals)
+        // console.log(this.state.meals)
       })
 
       fetch('http://localhost:3000/sides')
       .then(response => response.json())
       .then(allSides => {
         this.setState({ sides: allSides })
-        console.log(allSides)
-        console.log(this.state.sides)
+        // console.log(allSides)
+        // console.log(this.state.sides)
       })
   }
 
@@ -67,6 +74,8 @@ class App extends Component {
           removeMeal={this.removeMeal} 
           addMealToPickedMeals={this.addMealToPickedMeals} 
           meals={this.state.meals}
+          pickedSides={this.state.pickedSides}
+          removeSide={this.removeSide}
         />
       case "sides":
         return <SidesPage 
@@ -77,7 +86,11 @@ class App extends Component {
           pickedSides={this.state.pickedSides} 
         />
       case "ingredients":
-        return <h1>ingredients</h1>
+        return <IngredientsPage 
+          pickedMeals={this.state.pickedMeals}
+          pickedSides={this.state.pickedSides}
+          ingredients={this.state.ingredients}
+        />
       default:
         return <></> // Home page?
     }
