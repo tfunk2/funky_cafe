@@ -10,7 +10,7 @@ export default class MealBox extends Component {
     }
 
     createEachIngredient = this.props.meal.ingredients.map(ingredient => {
-            return <li className="ingredient-li" key={`${ingredient}${this.props.meal.id}`}>{ingredient}</li>
+            return <li className="meal-ingredient-li" key={`${ingredient}${this.props.meal.id}`}>{ingredient}</li>
     })
 
     whichImage = () => {

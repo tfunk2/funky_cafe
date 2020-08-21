@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/IngredientsPage.css'
+import Checkbox from '../images/checkbox.png'
 
 export default function IngredientsPage(props) {
 
@@ -14,15 +15,22 @@ export default function IngredientsPage(props) {
     const flattenedIngredientsArray = props.ingredients.flat()
 
     const listEachIngredient = flattenedIngredientsArray.map(ingredient => {
-        return <div key={flattenedIngredientsArray.indexOf(ingredient)}>
-            <h2>{ingredient}</h2>
-        </div>
+        return <li className="ingredient-li" key={`${ingredient.name} ${flattenedIngredientsArray.indexOf(ingredient)}`}>
+            <img className="checkbox" src={Checkbox} alt="checkbox"></img><span>{ingredient}</span>
+        </li>
     })
 
     return (
         <div className="ingredients-page-div">
-            {changeTitle()}
-            {listEachIngredient}
+            <section className="printable-section">
+                <div className="button-and-title">
+                    <button className="print-button" onClick={() => props.pickedMeals.length > 0 ? window.print() : null}>PRINT</button>
+                    {changeTitle()}
+                </div>
+                <ul className="ingredientsUl">
+                    {listEachIngredient}
+                </ul>
+            </section>
         </div>
     )
 }
