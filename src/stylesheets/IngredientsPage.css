@@ -1,0 +1,68 @@
+.ingredients-page-div {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 200px;
+    overflow-x: hidden;
+}
+
+@media print {
+    .ingredients-page-div {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .print-button {
+        display: none;
+    }
+
+    .checkbox {
+        display: block;
+        height: 50px;
+    }
+
+    .ingredientsUl {
+        margin-left: 0px;
+    }
+}
+
+.print-button {
+    width: 20%;
+}
+
+/* height and width are wrong here */
+.ingredientsUl {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    height: 800px;
+    width: 300px;
+}
+
+.ingredient-li {
+    /* margin-bottom: 0px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkbox {
+    /* display: none; */
+    height: 50px;
+}
+
+.printable-section {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.button-and-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

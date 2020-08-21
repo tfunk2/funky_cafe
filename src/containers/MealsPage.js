@@ -11,12 +11,14 @@ export default function MealsPage(props) {
                 addMealToPickedMeals={props.addMealToPickedMeals} 
                 key={meal.id} 
                 meal={meal} 
+                pickedSides={props.pickedSides}
+                removeSide={props.removeSide}
             />
         })
 
     return (
         <div className="meals-page-div">
-            <h1 className="meal-page-h1">Pick your meals!</h1>
+            <h1 className="meal-page-h1">Pick your meals! <span>Selected: {props.pickedMeals.length}</span></h1>
             {makeMealBoxes}
         </div>
     )

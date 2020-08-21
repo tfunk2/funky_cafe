@@ -7,11 +7,10 @@ import GroundBeefTacos from '../images/ground-beef-tacos.jpg'
 export default class MealBox extends Component {
 
     state = {
-        clickedStatus: false
     }
 
     createEachIngredient = this.props.meal.ingredients.map(ingredient => {
-            return <h3 key={`${ingredient}${this.props.meal.id}`}>{ingredient}</h3>
+            return <li className="meal-ingredient-li" key={`${ingredient}${this.props.meal.id}`}>{ingredient}</li>
     })
 
     whichImage = () => {
@@ -27,13 +26,21 @@ export default class MealBox extends Component {
         }
     }
 
+    // removeAppropriateSides = () => {
+    //     this.props.pickedSides.map(side => {
+    //         if(side.meal_id === this.props.meal.id) {
+    //             this.props.removeSide(side)
+    //         }
+    //     })
+    // }
+
     handleClick = (mealPicked) => {
         if(this.props.pickedMeals.includes(mealPicked) === true) {
             this.props.removeMeal(mealPicked)
-        } else if(this.state.clickedStatus === false && this.props.pickedMeals.includes(mealPicked) === false) {
+            // this.removeAppropriateSides()
+        } else if(this.props.pickedMeals.includes(mealPicked) === false) {
             this.props.addMealToPickedMeals(mealPicked)
         }
-        this.setState({ clickedStatus: !this.state.clickedStatus })
     }
 
     render() {
@@ -44,9 +51,9 @@ export default class MealBox extends Component {
                 <h2 className="meal-name-h2">{this.props.meal.name}</h2>
                 <div className="img-and-ingredients">
                     {this.whichImage()}
-                    <div className="ingredients-div">
+                    <ul className="ingredients-ul">
                         {this.createEachIngredient}
-                    </div>
+                    </ul>
                 </div>
             </div>
         )
