@@ -5,16 +5,16 @@ import SideBox from '../items/SideBox.js'
 export default function SidesPage(props) {
 
     const makeSideBoxes = props.sides.map(side => {
-            return <SideBox 
-                pickedMeals={props.pickedMeals} 
-                pickedSides={props.pickedSides} 
-                removeSide={props.removeSide} 
-                addSideToPickedSides={props.addSideToPickedSides} 
-                key={side.id} 
-                side={side}
-                sides={props.sides} 
-            />
-        })
+        return <SideBox 
+            pickedMeals={props.pickedMeals} 
+            pickedSides={props.pickedSides} 
+            removeSide={props.removeSide} 
+            addSideToPickedSides={props.addSideToPickedSides} 
+            key={side.id} 
+            side={side}
+            sides={props.sides} 
+        />
+    })
 
     return (
         <div className="sides-page-div">

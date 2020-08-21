@@ -6,13 +6,14 @@ import Guacamole from '../images/guacamole.jpg'
 import FrenchFries from '../images/french-fries.jpg'
 
 
+
 export default class SideBox extends Component {
 
     state = {
-        
+        clickedStatus: false
     }
 
-    
+    foundMeal = this.props.pickedMeals.find(pickedMeal => pickedMeal.id === this.props.side.meal_id)
 
     whichImage = () => {
         switch(this.props.side.name) {
@@ -32,20 +33,29 @@ export default class SideBox extends Component {
     createEachSide = this.props.pickedMeals.map(pickedMeal => {
         if(pickedMeal.id === this.props.side.meal_id){
             return <div key={pickedMeal.id}>
-                <h1>{this.props.side.name}</h1>
+                <h1>{this.props.side.name} - <span>{pickedMeal.name}</span></h1>
                 {this.whichImage()}
-                <h2>Side pairs with: {pickedMeal.name}</h2>
             </div>
         }
     })
 
-    handleClick = () => {
+    handleClick = (sidePicked) => {
+        if(this.props.pickedSides.includes(sidePicked) === true) {
+            this.props.removeSide(sidePicked)
+        } else if(this.state.clickedStatus === false && this.props.pickedSides.includes(sidePicked) === false) {
+            this.props.addSideToPickedSides(sidePicked)
+        }
         this.setState({ clickedStatus: !this.state.clickedStatus })
     }
 
     render() {
         return (
-            <div>
+            <div className={this.props.pickedSides.includes(this.props.side) ? 
+                "clicked-side-box-div" : 
+                this.props.pickedMeals.includes(this.foundMeal) ? 
+                "side-box-div" : 
+                "empty-div"}
+                onClick={() => this.handleClick(this.props.side)}>
                 {this.createEachSide}
             </div>
         )
