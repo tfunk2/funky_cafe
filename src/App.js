@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from './containers/NavBar.js';
 import MealsPage from './containers/MealsPage.js';
+import SidesPage from './containers/SidesPage.js';
 
 class App extends Component {
 
@@ -61,9 +62,20 @@ class App extends Component {
   activePage = () => {
     switch(this.state.activePage) {
       case "meals":
-        return <MealsPage pickedMeals={this.state.pickedMeals} removeMeal={this.removeMeal} addMealToPickedMeals={this.addMealToPickedMeals} meals={this.state.meals}/>
+        return <MealsPage 
+          pickedMeals={this.state.pickedMeals} 
+          removeMeal={this.removeMeal} 
+          addMealToPickedMeals={this.addMealToPickedMeals} 
+          meals={this.state.meals}
+        />
       case "sides":
-        return <h1>sides</h1>
+        return <SidesPage 
+          pickedMeals={this.state.pickedMeals} 
+          removeSide={this.removeSide} 
+          addSideToPickedSides={this.addSideToPickedSides} 
+          sides={this.state.sides} 
+          pickedSides={this.state.pickedSides} 
+        />
       case "ingredients":
         return <h1>ingredients</h1>
       default:

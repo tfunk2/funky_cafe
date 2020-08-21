@@ -1,0 +1,21 @@
+.side-img {
+    max-height: 300px;
+}
+
+.clicked-side-box-div {
+    background-color: rgb(250, 150, 0);
+    margin-bottom: 50px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.side-box-div {
+    background-color: rgb(212, 212, 212);
+    margin-bottom: 50px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.empty-div {
+    width: 0px;
+}
