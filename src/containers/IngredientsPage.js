@@ -15,8 +15,8 @@ export default function IngredientsPage(props) {
     const flattenedIngredientsArray = props.ingredients.flat()
 
     const listEachIngredient = flattenedIngredientsArray.map(ingredient => {
-        return <li className="ingredient-li" key={`${ingredient.name} ${flattenedIngredientsArray.indexOf(ingredient)}`}>
-            <img className="checkbox" src={Checkbox} alt="checkbox"></img><span>{ingredient}</span>
+        return <li className={props.ingredients.flat().length > 40 ? "ingredient-li-smaller" : "ingredient-li"} key={`${ingredient.name} ${flattenedIngredientsArray.indexOf(ingredient)}`}>
+            <img className={props.ingredients.flat().length > 40 ? "checkbox-smaller" : "checkbox"} src={Checkbox} alt="checkbox"></img><span>{ingredient}</span>
         </li>
     })
 
@@ -27,7 +27,7 @@ export default function IngredientsPage(props) {
                     <button className="print-button" onClick={() => props.pickedMeals.length > 0 ? window.print() : null}>PRINT</button>
                     {changeTitle()}
                 </div>
-                <ul className="ingredientsUl">
+                <ul className={props.ingredients.flat().length > 120 ? "ingredientsUlLonger" : "ingredientsUl"}>
                     {listEachIngredient}
                 </ul>
             </section>
