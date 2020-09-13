@@ -1,5 +1,6 @@
 .side-img {
     max-height: 300px;
+    object-fit: contain;
 }
 
 .clicked-side-box-div {
@@ -7,6 +8,7 @@
     margin-bottom: 50px;
     padding-top: 5px;
     padding-bottom: 20px;
+    margin-left: 20px;
 }
 
 .side-box-div {
@@ -14,8 +16,12 @@
     margin-bottom: 50px;
     padding-top: 5px;
     padding-bottom: 20px;
+    margin-left: 20px;
 }
 
-.empty-div {
-    width: 0px;
+.side-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 10px;
 }

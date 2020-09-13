@@ -31,8 +31,8 @@ export default class SideBox extends Component {
 
     createEachSide = this.props.pickedMeals.map(pickedMeal => {
         if(pickedMeal.id === this.props.side.meal_id){
-            return <div key={pickedMeal.id}>
-                <h1>{this.props.side.name} - <span>{pickedMeal.name}</span></h1>
+            return <div className="side-div" key={pickedMeal.id}>
+                <h1>{this.props.side.name}</h1>
                 {this.whichImage()}
             </div>
         }
@@ -50,10 +50,8 @@ export default class SideBox extends Component {
     render() {
         return (
             <div className={this.props.pickedSides.includes(this.props.side) ? 
-                "clicked-side-box-div" : 
-                this.props.pickedMeals.includes(this.foundMeal) ? 
-                "side-box-div" : 
-                "empty-div"}
+                "clicked-side-box-div" :  
+                "side-box-div"}
                 onClick={() => this.handleClick(this.props.side)}>
                 {this.createEachSide}
             </div>

@@ -12,6 +12,7 @@ class App extends Component {
     meals: [],
     sides: [],
     pickedMeals: [],
+    pickedMealSides: [],
     pickedSides: [],
     ingredients: []
   }
@@ -23,6 +24,13 @@ class App extends Component {
   addMealToPickedMeals = (mealSelected) => {
     this.setState({ pickedMeals: [...this.state.pickedMeals, mealSelected] })
     this.setState({ ingredients: [...this.state.ingredients, mealSelected.ingredients] })
+    let newPickedMealSidesArray = []
+    this.state.sides.forEach(side => {
+        if(side.meal_id === mealSelected.id) {
+          newPickedMealSidesArray.push(side)
+        }
+    })
+    this.setState({ pickedMealSides: [...this.state.pickedMealSides, ...newPickedMealSidesArray] })
   }
 
   removeMeal = (clickedMeal) => {
@@ -30,6 +38,10 @@ class App extends Component {
     this.setState({ pickedMeals: newPickedMeals })
     let newIngredients = this.state.ingredients.filter(arrayOfIngredients => arrayOfIngredients !== clickedMeal.ingredients)
     this.setState({ ingredients: newIngredients })
+    let filteredPickedMealSides = this.state.pickedMealSides.filter(side => side.meal_id !== clickedMeal.id)
+    this.setState({ pickedMealSides: filteredPickedMealSides })
+    let removedAppropriatePickedSides = this.state.pickedSides.filter(side => side.meal_id !== clickedMeal.id)
+    this.setState({ pickedSides: removedAppropriatePickedSides })
   }
 
   addSideToPickedSides = (sideSelected) => {
@@ -42,6 +54,15 @@ class App extends Component {
     this.setState({ pickedSides: newPickedSides })
     let newIngredientsList = this.state.ingredients.filter(arrayOfIngredients => arrayOfIngredients !== clickedSide.ingredients)
     this.setState({ ingredients: newIngredientsList })
+  }
+
+  handleReset = () => {
+    this.setState({ 
+      pickedMeals: [],
+      pickedSides: [],
+      pickedMealSides: [],
+      ingredients: [] 
+    })
   }
 
   componentDidMount() {
@@ -78,7 +99,8 @@ class App extends Component {
           removeSide={this.removeSide}
         />
       case "sides":
-        return <SidesPage 
+        return <SidesPage
+          pickedMealSides={this.state.pickedMealSides} 
           pickedMeals={this.state.pickedMeals} 
           removeSide={this.removeSide} 
           addSideToPickedSides={this.addSideToPickedSides} 
@@ -100,8 +122,16 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1>Funky Cafe</h1>
-          <NavBar setActivePage={this.setActivePage}/>
+          <div className="header-div">
+            <h1 className="title">Funky Cafe</h1>
+            <button className="reset-button" onClick={this.handleReset}>Reset All Selections</button>
+          </div>
+          <NavBar 
+            setActivePage={this.setActivePage}
+            pickedSides={this.state.pickedSides}
+            pickedMeals={this.state.pickedMeals}
+            ingredients={this.state.ingredients}
+          />
         </header>
         {this.activePage()}
       </div>

@@ -1,3 +1,13 @@
 .sides-page-div {
     margin-top: 200px;
 }
+
+.side-boxes-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.meal-box-for-sides {
+    background-color: rgb(126, 126, 126);
+}
