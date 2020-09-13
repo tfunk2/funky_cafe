@@ -16,10 +16,15 @@ export default function SidesPage(props) {
         />
     })
 
+    
+
     return (
         <div className="sides-page-div">
             <h1 className="side-page-h1">Pick your sides! <span>Selected: {props.pickedSides.length}</span></h1>
-            {makeSideBoxes}
+            {
+                makeSideBoxes
+
+            }
         </div>  
     )
 }
