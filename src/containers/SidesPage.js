@@ -4,9 +4,25 @@ import SideBox from '../items/SideBox.js'
 
 export default function SidesPage(props) {
 
+    const sortByName = (arrayToBeSorted) => {
+        return arrayToBeSorted.sort((a,b) => {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+            return -1;
+            }
+            if (nameA > nameB) {
+            return 1;
+            }
+            return 0;
+        })
+        
+    }
+
     const makeSideBoxes = (meal) => {
         let sidesForThisMeal = props.pickedMealSides.filter(side => side.meal_id === meal.id)
-        return sidesForThisMeal.map(side => {
+        let sortedSidesForThisMeal = sortByName(sidesForThisMeal)
+        return sortedSidesForThisMeal.map(side => {
             return <SideBox 
                 pickedMealSides={props.pickedMealSides}
                 pickedMeals={props.pickedMeals} 
@@ -20,7 +36,8 @@ export default function SidesPage(props) {
         })
     }
 
-    const makeMealBoxes = props.pickedMeals.map(meal => {
+    const sortedPickedMeals = sortByName(props.pickedMeals)
+    const makeMealBoxes = sortedPickedMeals.map(meal => {
         return <div className="meal-box-for-sides">
             <h1>{meal.name}</h1>
             <div className="side-boxes-div">

@@ -73,17 +73,25 @@ class App extends Component {
     fetch('http://localhost:3000/meals')
       .then(response => response.json())
       .then(allMeals => {
-        this.setState({ meals: allMeals })
-        // console.log(allMeals)
-        // console.log(this.state.meals)
+        this.setState({ 
+          meals: allMeals.sort((a,b) => {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          })
+        })
       })
 
       fetch('http://localhost:3000/sides')
       .then(response => response.json())
       .then(allSides => {
         this.setState({ sides: allSides })
-        // console.log(allSides)
-        // console.log(this.state.sides)
       })
   }
 
