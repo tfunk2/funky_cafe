@@ -44,6 +44,14 @@ class App extends Component {
     this.setState({ ingredients: newIngredientsList })
   }
 
+  handleReset = () => {
+    this.setState({ 
+      pickedMeals: [],
+      pickedSides: [],
+      ingredients: [] 
+    })
+  }
+
   componentDidMount() {
     this.fetchMealsAndSides()
   }
@@ -100,7 +108,10 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1>Funky Cafe</h1>
+          <div className="header-div">
+            <h1 className="title">Funky Cafe</h1>
+            <button className="reset-button" onClick={this.handleReset}>Reset All Selections</button>
+          </div>
           <NavBar setActivePage={this.setActivePage}/>
         </header>
         {this.activePage()}

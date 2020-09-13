@@ -11,3 +11,18 @@
         display: none;
     }
 }
+
+.header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    margin-left: 20px;
+}
+
+.reset-button {
+    height: 28px;
+    margin-right: 20px;
+}
