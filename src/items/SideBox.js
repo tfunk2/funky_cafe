@@ -52,7 +52,7 @@ export default class SideBox extends Component {
     createEachSide = this.props.pickedMeals.map(pickedMeal => {
         if(pickedMeal.id === this.props.side.meal_id){
             return <div className="side-div" key={pickedMeal.id}>
-                <h1>{this.props.side.name}</h1>
+                <h1 className="side-name-h1">{this.props.side.name}</h1>
                 {this.whichImage()}
             </div>
         }
