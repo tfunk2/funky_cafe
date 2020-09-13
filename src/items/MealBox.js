@@ -63,11 +63,10 @@ export default class MealBox extends Component {
     }
 
     // removeAppropriateSides = () => {
-    //     this.props.pickedSides.map(side => {
-    //         if(side.meal_id === this.props.meal.id) {
-    //             this.props.removeSide(side)
-    //         }
+    //     const newPickedSides = this.props.pickedSides.filter(side => {
+    //         side.meal_id === this.props.meal.id
     //     })
+        
     // }
 
     handleClick = (mealPicked) => {
