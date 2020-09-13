@@ -17,18 +17,13 @@
         display: none;
     }
 
-    .checkbox {
-        display: block;
-        height: 50px;
-    }
-
-    .ingredientsUl {
+    .printable-section {
         margin-left: 0px;
     }
 }
 
 .print-button {
-    width: 20%;
+    width: 25%;
 }
 
 /* height and width are wrong here */
@@ -38,14 +33,37 @@
     flex-wrap: wrap;
     list-style-type: none;
     height: 800px;
-    width: 300px;
+    width: 100%;
+    padding-left: 0px;
+    align-items: center;
+}
+
+.ingredientsUlLonger {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    height: 1600px;
+    width: 100%;
+    padding-left: 0px;
+    align-items: center;
 }
 
 .ingredient-li {
     /* margin-bottom: 0px; */
+    font-size: 14pt;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 33%;
+}
+
+.ingredient-li-smaller {
+    font-size: 10pt;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 250px;
 }
 
 .checkbox {
@@ -53,11 +71,16 @@
     height: 50px;
 }
 
+.checkbox-smaller {
+    /* display: none; */
+    height: 20px;
+}
+
 .printable-section {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
 }
 
 .button-and-title {

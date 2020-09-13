@@ -15,6 +15,8 @@ import PulledPorkSandwiches from '../images/pulled-pork-sandwiches.jpg'
 import BreakfastBurritos from '../images/breakfast-burritos.jpg'
 import WalnutCrustedSalmon from '../images/walnut-crusted-salmon.jpg'
 import BuffaloWildWings from '../images/buffalo-wild-wings.jpg'
+import Quesadillas from '../images/quesadilla.jpg'
+
 
 export default class MealBox extends Component {
 
@@ -57,6 +59,8 @@ export default class MealBox extends Component {
               return <img className="meal-img" alt="Walnut Crusted Salmon" src={WalnutCrustedSalmon}></img>
             case "Buffalo Wild Wings":
               return <img className="meal-img" alt="Buffalo Wild Wings" src={BuffaloWildWings}></img>
+            case "Quesadillas":
+              return <img className="side-img" alt="Quesadillas" src={Quesadillas}></img>
             default:
               return <></> // Home page?
         }

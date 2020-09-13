@@ -42,6 +42,9 @@ class App extends Component {
     this.setState({ pickedMealSides: filteredPickedMealSides })
     let removedAppropriatePickedSides = this.state.pickedSides.filter(side => side.meal_id !== clickedMeal.id)
     this.setState({ pickedSides: removedAppropriatePickedSides })
+    // this.state.pickedSides.forEach(side => {
+    //   return side.meal_id === clickedMeal.id ? this.removeIngredients(side) : null
+    // })
   }
 
   addSideToPickedSides = (sideSelected) => {
@@ -55,6 +58,13 @@ class App extends Component {
     let newIngredientsList = this.state.ingredients.filter(arrayOfIngredients => arrayOfIngredients !== clickedSide.ingredients)
     this.setState({ ingredients: newIngredientsList })
   }
+
+  // removeIngredients = (side) => {
+  //   let index = this.state.ingredients.findIndex(arrayOfIngredients => arrayOfIngredients === side.ingredients)
+  //   let ingredientsToBeSpliced = [...this.state.ingredients]
+  //   ingredientsToBeSpliced.splice(index, 1)
+  //   this.setState({ ingredients: ingredientsToBeSpliced })
+  // }
 
   handleReset = () => {
     this.setState({ 
@@ -73,17 +83,25 @@ class App extends Component {
     fetch('http://localhost:3000/meals')
       .then(response => response.json())
       .then(allMeals => {
-        this.setState({ meals: allMeals })
-        // console.log(allMeals)
-        // console.log(this.state.meals)
+        this.setState({ 
+          meals: allMeals.sort((a,b) => {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+          })
+        })
       })
 
       fetch('http://localhost:3000/sides')
       .then(response => response.json())
       .then(allSides => {
         this.setState({ sides: allSides })
-        // console.log(allSides)
-        // console.log(this.state.sides)
       })
   }
 
