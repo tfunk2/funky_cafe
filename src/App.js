@@ -60,6 +60,7 @@ class App extends Component {
     this.setState({ 
       pickedMeals: [],
       pickedSides: [],
+      pickedMealSides: [],
       ingredients: [] 
     })
   }
