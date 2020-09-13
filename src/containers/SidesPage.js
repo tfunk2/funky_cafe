@@ -29,9 +29,17 @@ export default function SidesPage(props) {
         </div>
     })
 
+    const emptySidesMessage = () => {
+        if(props.pickedMeals.length > 1) {
+            return <h1 className="side-page-h1">Pick your sides!</h1>
+        } else {
+            return <h2>No sides yet because you haven't picked any meals!</h2>
+        }
+    }
+
     return (
         <div className="sides-page-div">
-            <h1 className="side-page-h1">Pick your sides! <span>Selected: {props.pickedSides.length}</span></h1>
+            {emptySidesMessage()}
             {makeMealBoxes}
         </div>  
     )

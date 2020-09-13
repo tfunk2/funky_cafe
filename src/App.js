@@ -126,7 +126,12 @@ class App extends Component {
             <h1 className="title">Funky Cafe</h1>
             <button className="reset-button" onClick={this.handleReset}>Reset All Selections</button>
           </div>
-          <NavBar setActivePage={this.setActivePage}/>
+          <NavBar 
+            setActivePage={this.setActivePage}
+            pickedSides={this.state.pickedSides}
+            pickedMeals={this.state.pickedMeals}
+            ingredients={this.state.ingredients}
+          />
         </header>
         {this.activePage()}
       </div>
