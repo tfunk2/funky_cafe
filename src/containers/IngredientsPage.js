@@ -12,10 +12,34 @@ export default function IngredientsPage(props) {
         }
     }
 
-    const flattenedIngredientsArray = props.ingredients.flat()
+    const measurementRegex = /cup|bag|bottle|can|cans|pound|lb|tsp|[Tt]bsp|packet|cloves|jar|oz|slices|head|bunch|loaf/
 
-    const listEachIngredient = flattenedIngredientsArray.map(ingredient => {
-        return <li className={props.ingredients.flat().length > 48 ? "ingredient-li-smaller" : "ingredient-li"} key={`${ingredient.name} ${flattenedIngredientsArray.indexOf(ingredient)}`}>
+    const sortedIngredientsArray = props.ingredients.flat().sort((a, b) => {
+        let ingredientA;
+        let ingredientB;
+        if(measurementRegex.test(a.split(" ")[1])) {
+            ingredientA = a.split(" ")[2].toUpperCase(); 
+        } else {
+            ingredientA = a.split(" ")[1].toUpperCase()
+        }
+        
+        if(measurementRegex.test(b.split(" ")[1])) {
+            ingredientB = b.split(" ")[2].toUpperCase(); 
+        } else {
+            ingredientB = b.split(" ")[1].toUpperCase()
+        }
+          
+        if (ingredientA < ingredientB) {
+        return -1;
+        }
+        if (ingredientA > ingredientB) {
+        return 1;
+        }
+        return 0;
+    })
+
+    const listEachIngredient = sortedIngredientsArray.map(ingredient => {
+        return <li className={props.ingredients.flat().length > 48 ? "ingredient-li-smaller" : "ingredient-li"} key={`${ingredient.name} ${sortedIngredientsArray.indexOf(ingredient)}`}>
             <img className={props.ingredients.flat().length > 48 ? "checkbox-smaller" : "checkbox"} src={Checkbox} alt="checkbox"></img><span>{ingredient}</span>
         </li>
     })
