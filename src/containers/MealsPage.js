@@ -19,7 +19,9 @@ export default function MealsPage(props) {
     return (
         <div className="meals-page-div">
             <h1 className="meal-page-h1">Pick your meals!</h1>
-            {makeMealBoxes}
+            <div className="meal-boxes-div">
+                {makeMealBoxes}
+            </div>
         </div>
     )
 }

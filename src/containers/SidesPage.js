@@ -22,18 +22,24 @@ export default function SidesPage(props) {
     const makeSideBoxes = (meal) => {
         let sidesForThisMeal = props.pickedMealSides.filter(side => side.meal_id === meal.id)
         let sortedSidesForThisMeal = sortByName(sidesForThisMeal)
-        return sortedSidesForThisMeal.map(side => {
-            return <SideBox 
-                pickedMealSides={props.pickedMealSides}
-                pickedMeals={props.pickedMeals} 
-                pickedSides={props.pickedSides} 
-                removeSide={props.removeSide} 
-                addSideToPickedSides={props.addSideToPickedSides} 
-                key={side.id} 
-                side={side}
-                sides={props.sides} 
-            /> 
-        })
+        if(sortedSidesForThisMeal.length > 0) {
+            return sortedSidesForThisMeal.map(side => {
+                return <SideBox 
+                    pickedMealSides={props.pickedMealSides}
+                    pickedMeals={props.pickedMeals} 
+                    pickedSides={props.pickedSides} 
+                    removeSide={props.removeSide} 
+                    addSideToPickedSides={props.addSideToPickedSides} 
+                    key={side.id} 
+                    side={side}
+                    sides={props.sides} 
+                /> 
+            })
+        } else {
+            return <div className="empty-side-box-div">
+                <h1>No Sides Found</h1>
+            </div>
+        }
     }
 
     const sortedPickedMeals = sortByName(props.pickedMeals)
@@ -50,7 +56,7 @@ export default function SidesPage(props) {
         if(props.pickedMeals.length > 0) {
             return <h1 className="side-page-h1">Pick your sides!</h1>
         } else {
-            return <h2>No sides yet because you haven't picked any meals!</h2>
+            return <h2 className="no-sides-h2">No sides yet because you haven't picked any meals!</h2>
         }
     }
 

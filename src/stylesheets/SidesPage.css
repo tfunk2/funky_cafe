@@ -1,5 +1,5 @@
 .sides-page-div {
-    margin-top: 200px;
+    margin-top: 185px;
 }
 
 .side-boxes-div {
@@ -10,4 +10,17 @@
 
 .meal-box-for-sides {
     background-color: rgb(126, 126, 126);
+}
+
+.no-sides-h2 {
+    text-align: center;
+}
+
+.side-page-h1 {
+    text-align: center;
+}
+
+.empty-side-box-div {
+    background-color: hotpink;
+    font-family: 'Chilanka', cursive;
 }
