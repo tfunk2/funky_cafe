@@ -5,6 +5,8 @@
     padding-bottom: 20px;
     cursor: pointer;
     box-shadow: inset 0px 45px rgb(250, 150, 0), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    border-radius: 20px;
+    position: relative;
 }
 
 .clicked-meal-box-div {
@@ -15,10 +17,17 @@
     cursor: pointer;
     box-shadow: inset 0px 45px rgb(26, 26, 26), -8px 8px 8px rgba(26, 26, 26, 0.45);
     color: rgb(255, 206, 132);
+    border-radius: 20px;
+    position: relative;
+}
+
+.meal-box-div:hover {
+    box-shadow: inset 0px 45px rgb(255, 206, 132), -8px 8px 8px rgba(26, 26, 26, 0.45);
 }
 
 .meal-img {
     max-height: 300px;
+    border-radius: 20px;
 }
 
 .img-and-ingredients {
@@ -50,5 +59,11 @@
     margin-bottom: 5px;
     font-family: 'Chilanka', cursive;
     font-size: 36px;
-    /* color: inherit; */
+}
+
+.checkmark {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 24pt;
 }
