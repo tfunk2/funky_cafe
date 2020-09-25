@@ -59,13 +59,6 @@ class App extends Component {
     this.setState({ ingredients: newIngredientsList })
   }
 
-  // removeIngredients = (side) => {
-  //   let index = this.state.ingredients.findIndex(arrayOfIngredients => arrayOfIngredients === side.ingredients)
-  //   let ingredientsToBeSpliced = [...this.state.ingredients]
-  //   ingredientsToBeSpliced.splice(index, 1)
-  //   this.setState({ ingredients: ingredientsToBeSpliced })
-  // }
-
   handleReset = () => {
     this.setState({ 
       pickedMeals: [],

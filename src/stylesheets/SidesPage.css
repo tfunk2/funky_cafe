@@ -1,13 +1,68 @@
 .sides-page-div {
-    margin-top: 200px;
+    margin-top: 185px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-page-meal-boxes-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-right: 20px;
 }
 
 .side-boxes-div {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    padding-left: 20px;
 }
 
 .meal-box-for-sides {
     background-color: rgb(126, 126, 126);
+    margin: 0px 0px 20px 20px;
+    border-radius: 20px;
+    box-shadow: inset 0px 54px rgb(26, 26, 26), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    color: rgb(255, 206, 132);
+}
+
+.no-sides-h2 {
+    text-align: center;
+}
+
+.side-page-h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.empty-side-box-div {
+    background-color: rgb(212, 212, 212);
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    font-family: 'Chilanka', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 54px rgb(250, 150, 0), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    border-radius: 20px;
+    min-width: 250px;
+    color: rgb(26, 26, 26);
+}
+
+.no-sides-img {
+    max-height: 244px;
+}
+
+.no-sides-h1 {
+    cursor: default;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.side-page-meal-box-h1 {
+    margin: 10px 20px 20px 20px;
+    cursor: default;
 }

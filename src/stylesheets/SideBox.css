@@ -1,22 +1,40 @@
 .side-img {
-    max-height: 300px;
+    max-height: 250px;
     object-fit: contain;
+    border-radius: 20px;
 }
 
 .clicked-side-box-div {
     background-color: rgb(250, 150, 0);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding-top: 5px;
     padding-bottom: 20px;
-    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: inset 0px 44px rgb(26, 26, 26), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    border-radius: 20px;
+    color: rgb(255, 206, 132);
+    min-width: 250px;
+    cursor: pointer;
+    /* position: relative; */
 }
 
 .side-box-div {
     background-color: rgb(212, 212, 212);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding-top: 5px;
     padding-bottom: 20px;
-    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: inset 0px 44px rgb(250, 150, 0), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    border-radius: 20px;
+    min-width: 250px;
+    cursor: pointer;
+    /* position: relative; */
+    color: rgb(26, 26, 26);
+}
+
+.side-box-div:hover {
+    box-shadow: inset 0px 44px rgb(255, 206, 132), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    
 }
 
 .side-div {
@@ -24,8 +42,20 @@
     flex-direction: column;
     justify-content: center;
     padding: 0px 10px;
+    position: relative;
 }
 
 .side-name-h1 {
     font-family: 'Chilanka', cursive;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.side-checkmark {
+    position: absolute;
+    right: 3px;
+    bottom: -26px;
+    font-size: 12pt;
+    /* z-index: 10; */
 }

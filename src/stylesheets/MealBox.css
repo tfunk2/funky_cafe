@@ -1,40 +1,56 @@
 .meal-box-div {
     background-color: rgb(212, 212, 212);
-    margin-bottom: 50px;
+    margin: 0px 20px 20px 0px;
     padding-top: 5px;
     padding-bottom: 20px;
+    cursor: pointer;
+    box-shadow: inset 0px 45px rgb(250, 150, 0), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    border-radius: 20px;
+    position: relative;
 }
 
 .clicked-meal-box-div {
     background-color: rgb(250, 150, 0);
-    margin-bottom: 50px;
+    margin: 0px 20px 20px 0px;
     padding-top: 5px;
     padding-bottom: 20px;
+    cursor: pointer;
+    box-shadow: inset 0px 45px rgb(26, 26, 26), -8px 8px 8px rgba(26, 26, 26, 0.45);
+    color: rgb(255, 206, 132);
+    border-radius: 20px;
+    position: relative;
+}
+
+.meal-box-div:hover {
+    box-shadow: inset 0px 45px rgb(255, 206, 132), -8px 8px 8px rgba(26, 26, 26, 0.45);
 }
 
 .meal-img {
     max-height: 300px;
+    border-radius: 20px;
 }
 
 .img-and-ingredients {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 5%;
+    margin-left: 20px;
 }
 
 .ingredients-ul {
     height: 250px;
     display: flex;
     flex-direction: column;
-    margin-left: 25%;
-    width: 50%;
+    padding-left: 10px;
+    width: 100%;
     flex-wrap: wrap;
     list-style-type: none;
 }
 
 .meal-ingredient-li {
     margin-bottom: 12px;
+    font-size: 12px;
+    color: rgb(26, 26, 26);
 }
 
 .meal-name-h2 {
@@ -43,4 +59,11 @@
     margin-bottom: 5px;
     font-family: 'Chilanka', cursive;
     font-size: 36px;
+}
+
+.checkmark {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 24pt;
 }

@@ -24,7 +24,11 @@ export default class MealBox extends Component {
     }
 
     createEachIngredient = this.props.meal.ingredients.map(ingredient => {
-            return <li className="meal-ingredient-li" key={`${ingredient}${this.props.meal.id}`}>{ingredient}</li>
+            return <li className="meal-ingredient-li" 
+              key={`${ingredient}${this.props.meal.id}`}
+            >
+              {ingredient}
+            </li>
     })
 
     whichImage = () => {
@@ -60,24 +64,17 @@ export default class MealBox extends Component {
             case "Buffalo Wild Wings":
               return <img className="meal-img" alt="Buffalo Wild Wings" src={BuffaloWildWings}></img>
             case "Quesadillas":
-              return <img className="side-img" alt="Quesadillas" src={Quesadillas}></img>
+              return <img className="meal-img" alt="Quesadillas" src={Quesadillas}></img>
             default:
               return <></> // Home page?
         }
     }
 
-    // removeAppropriateSides = () => {
-    //     const newPickedSides = this.props.pickedSides.filter(side => {
-    //         side.meal_id === this.props.meal.id
-    //     })
-        
-    // }
-
     handleClick = (mealPicked) => {
-        if(this.props.pickedMeals.includes(mealPicked) === true) {
+        if(this.props.pickedMeals.includes(mealPicked)) {
             this.props.removeMeal(mealPicked)
             // this.removeAppropriateSides()
-        } else if(this.props.pickedMeals.includes(mealPicked) === false) {
+        } else if(!this.props.pickedMeals.includes(mealPicked)) {
             this.props.addMealToPickedMeals(mealPicked)
         }
     }
@@ -94,6 +91,9 @@ export default class MealBox extends Component {
                         {this.createEachIngredient}
                     </ul>
                 </div>
+                <span className="checkmark">
+                  {this.props.pickedMeals.includes(this.props.meal) ? " ✔️" : ""}
+                </span>
             </div>
         )
     }  

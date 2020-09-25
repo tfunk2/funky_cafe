@@ -7,6 +7,16 @@
     overflow-x: hidden;
 }
 
+.ingredients-ul-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color: rgb(255, 206, 132);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    box-shadow: -8px 8px 8px rgba(26, 26, 26, 0.45);
+}
+
 @media print {
     .ingredients-page-div {
         margin-top: 0px;
@@ -20,13 +30,28 @@
     .printable-section {
         margin-left: 0px;
     }
+
+    .ingredients-ul-container {
+        width: 100%;
+        box-shadow: none;
+    }
 }
 
 .print-button {
-    width: 25%;
+    width: 150px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* height and width are wrong here */
+.print-button:focus {
+    outline: none;
+}
+
+.print-button:hover {
+    background-color: rgba(250, 150, 0, 0.853);
+}
+
 .ingredientsUl {
     display: flex;
     flex-direction: column;
@@ -56,6 +81,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 33%;
+    cursor: default;
 }
 
 .ingredient-li-smaller {
@@ -64,6 +90,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 250px;
+    cursor: default;
 }
 
 .checkbox {
