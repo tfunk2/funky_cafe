@@ -41,7 +41,7 @@
     height: 250px;
     display: flex;
     flex-direction: column;
-    /* margin-left: 25%; */
+    padding-left: 10px;
     width: 100%;
     flex-wrap: wrap;
     list-style-type: none;

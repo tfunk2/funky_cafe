@@ -48,17 +48,18 @@
     align-items: center;
     box-shadow: inset 0px 54px rgb(250, 150, 0), -8px 8px 8px rgba(26, 26, 26, 0.45);
     border-radius: 20px;
-    min-width: 320px;
+    min-width: 250px;
     color: rgb(26, 26, 26);
 }
 
 .no-sides-img {
-    max-height: 294px;
+    max-height: 244px;
 }
 
 .no-sides-h1 {
     cursor: default;
     margin-top: 10px;
+    font-size: 24px;
 }
 
 .side-page-meal-box-h1 {
