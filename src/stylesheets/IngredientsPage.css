@@ -7,6 +7,15 @@
     overflow-x: hidden;
 }
 
+.ingredients-ul-container {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background-color: rgb(255, 206, 132);
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
 @media print {
     .ingredients-page-div {
         margin-top: 0px;
@@ -20,10 +29,23 @@
     .printable-section {
         margin-left: 0px;
     }
+
+    .ingredients-ul-container {
+        width: 100%;
+    }
 }
 
 .print-button {
-    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 28px;
+    border-radius: 4px;
+}
+
+.print-button:focus {
+    outline: none;
 }
 
 /* height and width are wrong here */

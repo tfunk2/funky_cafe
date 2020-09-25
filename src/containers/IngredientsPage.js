@@ -51,9 +51,11 @@ export default function IngredientsPage(props) {
                     <button className="print-button" onClick={() => props.pickedMeals.length > 0 ? window.print() : null}>PRINT</button>
                     {changeTitle()}
                 </div>
-                <ul className={props.ingredients.flat().length > 120 ? "ingredientsUlLonger" : "ingredientsUl"}>
-                    {listEachIngredient}
-                </ul>
+                <div className="ingredients-ul-container">
+                    <ul className={props.ingredients.flat().length > 120 ? "ingredientsUlLonger" : "ingredientsUl"}>
+                        {listEachIngredient}
+                    </ul>
+                </div>
             </section>
         </div>
     )
