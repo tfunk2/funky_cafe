@@ -28,6 +28,7 @@
 .meal-img {
     max-height: 300px;
     border-radius: 20px;
+    object-fit: contain;
 }
 
 .img-and-ingredients {
@@ -66,4 +67,25 @@
     right: 10px;
     bottom: 5px;
     font-size: 24pt;
+}
+
+@media only screen and (max-width: 320px) {
+    .meal-name-h2 {
+        font-size: 30px;
+    }
+
+    .img-and-ingredients {
+        flex-direction: column;
+        margin: 8px 10px 0px 10px;
+    }
+
+    .ingredients-ul {
+        flex-wrap: nowrap;
+        height: auto;
+        margin-bottom: 0px;
+    }
+
+    .meal-box-div, .clicked-meal-box-div {
+        cursor: default;
+    }
 }

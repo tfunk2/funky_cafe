@@ -134,7 +134,7 @@ class App extends Component {
       <div className="app">
         <header className="app-header">
           <div className="header-div">
-            <h1 className="title">Funky Cafe</h1>
+            <h1 className="title"><span className="letter-f-and-c">F</span>unky <span className="letter-f-and-c">C</span>afe</h1>
             <button className="reset-button" onClick={this.handleReset}>Reset All Selections</button>
           </div>
           <NavBar 
