@@ -25,7 +25,7 @@ html {
 
 .title {
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 5px;
     font-size: 56px;
     font-family: 'Chilanka', cursive;
@@ -38,4 +38,19 @@ html {
     cursor: pointer;
     border: 1.35px rgb(150, 150, 150) solid;
     border-radius: 4px;
+}
+
+.letter-f-and-c {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 48pt;
+}
+
+@media only screen and (max-width: 320px) {
+    .app-header {
+        max-width: 320px;
+    }
+
+    .title, .letter-f-and-c {
+        font-size: 28px;
+    }
 }

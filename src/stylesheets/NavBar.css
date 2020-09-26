@@ -41,3 +41,20 @@
 .navbar-h1 {
     font-size: inherit;
 }
+
+@media only screen and (max-width: 320px) {
+    .navbar-h1 {
+        font-size: 16px !important;
+        margin: 0px;
+    }
+
+    .navbar-li {
+        flex-direction: column;
+        height: 50px;
+    }
+
+    .navbar-ul {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
