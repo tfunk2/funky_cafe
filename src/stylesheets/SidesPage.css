@@ -67,3 +67,26 @@
     margin: 10px 20px 20px 20px;
     cursor: default;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .sides-page-div {
+        margin-top: 105px;
+    }
+
+    .side-boxes-div {
+        flex-direction: column;
+    }
+
+    .meal-box-for-sides {
+        box-shadow: inset 0px 50px rgb(26, 26, 26), -8px 8px 8px rgba(26, 26, 26, 0.45);
+        width: 100%;
+    }
+
+    .side-page-h1 {
+        font-size: 24px;
+    }
+
+    .side-page-meal-box-h1 {
+        margin: 10px 20px 10px 20px;
+    }
+}

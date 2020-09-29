@@ -6,9 +6,9 @@ export default function IngredientsPage(props) {
 
     const changeTitle = () => {
         if(props.pickedMeals.length > 0) {
-            return <h1>Here's your ingredients list!</h1>
+            return <h1 className="ingredients-list-h1">Here's your ingredients list!</h1>
         } else {
-            return <h1>No ingredients yet because you haven't picked any meals or sides!</h1>
+            return <h1 className="no-ingredients-h1">No ingredients yet because you haven't picked any meals or sides!</h1>
         }
     }
 
