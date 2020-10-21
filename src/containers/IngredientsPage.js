@@ -12,7 +12,7 @@ export default function IngredientsPage(props) {
         }
     }
 
-    const measurementRegex = /cup|bag|bottle|can|cans|pound|lb|tsp|[Tt]bsp|packet|cloves|jar|oz|slices|head|bunch|loaf/
+    const measurementRegex = /cups?|bags?|bottles?|cans?|pounds?|lbs?|tsps?|[Tt]bsps?|packets?|cloves|jars?|oz|slices?|heads?|bunch|loaf|loaves|packages?/
 
     const sortedIngredientsArray = props.ingredients.flat().sort((a, b) => {
         let ingredientA;
