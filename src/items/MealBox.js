@@ -16,6 +16,12 @@ import BreakfastBurritos from '../images/breakfast-burritos.jpg'
 import WalnutCrustedSalmon from '../images/walnut-crusted-salmon.jpg'
 import BuffaloWildWings from '../images/buffalo-wild-wings.jpg'
 import Quesadillas from '../images/quesadilla.jpg'
+import CilantroLimeChicken from '../images/cilantro-lime-chicken.jpg'
+import CreamCheeseChickenChili from '../images/cream-cheese-chicken-chili.jpg'
+import CreamyTuscanGarlicTortelliniSoup from '../images/creamy-tuscan-garlic-tortellini-soup.jpg'
+import JalapenoPopperChickenTaquitos from '../images/jalapeno-popper-chicken-taquitos.jpg'
+import PestoChickenTortelliniAndVeggies from '../images/pesto-chicken-tortellini-and-veggies.jpg'
+import TacoSalad from '../images/taco-salad.jpg'
 
 
 export default class MealBox extends Component {
@@ -65,6 +71,18 @@ export default class MealBox extends Component {
               return <img className="meal-img" alt="Buffalo Wild Wings" src={BuffaloWildWings}></img>
             case "Quesadillas":
               return <img className="meal-img" alt="Quesadillas" src={Quesadillas}></img>
+            case "Cilantro Lime Chicken":
+              return <img className="meal-img" alt="Cilantro Lime Chicken" src={CilantroLimeChicken}></img>
+            case "Cream Cheese Chicken Chili":
+              return <img className="meal-img" alt="Cream Cheese Chicken Chili" src={CreamCheeseChickenChili}></img>
+            case "Creamy Tuscan Garlic Tortellini Soup":
+              return <img className="meal-img" alt="Creamy Tuscan Garlic Tortellini Soup" src={CreamyTuscanGarlicTortelliniSoup}></img>
+            case "Jalapeno Popper Chicken Taquitos":
+              return <img className="meal-img" alt="Jalapeno Popper Chicken Taquitos" src={JalapenoPopperChickenTaquitos}></img>
+            case "Pesto Chicken Tortellini and Veggies":
+              return <img className="meal-img" alt="Pesto Chicken Tortellini and Veggies" src={PestoChickenTortelliniAndVeggies}></img>
+            case "Taco Salad":
+              return <img className="meal-img" alt="Taco Salad" src={TacoSalad}></img>
             default:
               return <></> // Home page?
         }
