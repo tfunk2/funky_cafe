@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   fetchMealsAndSides = () => {
-    fetch('http://localhost:3000/meals')
+    fetch('https://funky-cafe.herokuapp.com/meals')
       .then(response => response.json())
       .then(allMeals => {
         this.setState({ 
@@ -91,7 +91,7 @@ class App extends Component {
         })
       })
 
-      fetch('http://localhost:3000/sides')
+      fetch('https://funky-cafe.herokuapp.com/sides')
       .then(response => response.json())
       .then(allSides => {
         this.setState({ sides: allSides })
