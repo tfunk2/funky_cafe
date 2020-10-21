@@ -12,6 +12,10 @@ html {
 }
 
 @media print {
+    html {
+        background-image: none;
+    }
+
     .app-header {
         display: none;
     }
