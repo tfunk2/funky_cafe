@@ -38,7 +38,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     list-style-type: none;
-    height: 800px;
+    height: clamp(800px, 1200px, 1600px);
     width: 100%;
     padding-left: 8px;
 }
@@ -48,7 +48,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     list-style-type: none;
-    height: clamp(1600px, 1600px, fit-content);
+    height: clamp(1600px, 2000px, 2400px);
     width: 100%;
     padding-left: 8px;
     /* align-items: center; */
@@ -133,7 +133,7 @@
         width: 100%;
         box-shadow: none;
         background-color: rgb(0, 0, 0, 0);
-        height: 720px;
+        /* height: 820px; */
     }
 
     .ingredientsUl {
