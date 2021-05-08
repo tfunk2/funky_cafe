@@ -1,27 +1,35 @@
-import React from 'react';
-import '../stylesheets/MealsPage.css'
-import MealBox from '../items/MealBox.js'
+import React from "react";
+import "../stylesheets/MealsPage.css";
+import MealBox from "../items/MealBox.js";
 
-export default function MealsPage(props) {
-
-    const makeMealBoxes = props.meals.map(meal => {
-            return <MealBox 
-                pickedMeals={props.pickedMeals} 
-                removeMeal={props.removeMeal} 
-                addMealToPickedMeals={props.addMealToPickedMeals} 
-                key={meal.id} 
-                meal={meal} 
-                pickedSides={props.pickedSides}
-                removeSide={props.removeSide}
-            />
-        })
-
+export default function MealsPage({
+  meals,
+  pickedMeals,
+  removeMeal,
+  addMealToPickedMeals,
+  removeSide,
+  pickedSides,
+}) {
+  const makeMealBoxes = meals.map((meal) => {
     return (
-        <div className="meals-page-div">
-            <h1 className="meal-page-h1">Pick your meals!</h1>
-            <div className="meal-boxes-div">
-                {makeMealBoxes}
-            </div>
-        </div>
-    )
+      <MealBox
+        pickedMeals={pickedMeals}
+        removeMeal={removeMeal}
+        addMealToPickedMeals={addMealToPickedMeals}
+        key={meal.id}
+        meal={meal}
+        pickedSides={pickedSides}
+        removeSide={removeSide}
+      />
+    );
+  });
+
+  return (
+    <div className="meals-page-div">
+      <h1 className="meal-page-h1">
+        {meals.length < 1 ? "Loading..." : "Pick your meals!"}
+      </h1>
+      <div className="meal-boxes-div">{makeMealBoxes}</div>
+    </div>
+  );
 }
